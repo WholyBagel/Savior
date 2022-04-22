@@ -1,5 +1,6 @@
-html,
-body {
+@slidwidth :
+
+html, body {
   width: 100%;
   height: 100%;
   display: flex;
@@ -38,6 +39,7 @@ form #debt-amount-slider::before {
   position: absolute;
   height: 2px;
   width: 100%;
+  width: (100% * (#{5 - 1} / #{number-of-options}));
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -102,7 +104,22 @@ form #debt-amount-slider input:checked + label::after {
   transform: translate(-50%, -50%) scale(0.75);
 }
 form #debt-amount-slider input:checked ~ #debt-amount-pos {
-  opacity: 1;
+  opacity: 100;
+}
+form #debt-amount-slider input:checked:nth-child(1) ~ #debt-amount-pos {
+  left: 10%;
+}
+form #debt-amount-slider input:checked:nth-child(3) ~ #debt-amount-pos {
+  left: 30%;
+}
+form #debt-amount-slider input:checked:nth-child(5) ~ #debt-amount-pos {
+  left: 50%;
+}
+form #debt-amount-slider input:checked:nth-child(7) ~ #debt-amount-pos {
+  left: 70%;
+}
+form #debt-amount-slider input:checked:nth-child(9) ~ #debt-amount-pos {
+  left: 90%;
 }
 form #debt-amount-slider #debt-amount-pos {
   display: block;
